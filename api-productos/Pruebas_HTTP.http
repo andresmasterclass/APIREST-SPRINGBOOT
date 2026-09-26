@@ -1,0 +1,53 @@
+### 1. Crear producto 1 (POST)
+POST http://localhost:8080/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Laptop Gamer 16GB RAM",
+  "precio": 1250.00,
+  "stock": 10,
+  "categoria": "Tecnología"
+}
+
+### 2. Crear producto 2 (POST)
+POST http://localhost:8080/api/productos
+Content-Type: application/json
+
+{
+  "nombre": "Teclado Mecánico RGB",
+  "precio": 85.50,
+  "stock": 25,
+  "categoria": "Tecnología"
+}
+
+### 3. Listar todos los productos (GET)
+GET http://localhost:8080/api/productos
+
+### 4. Consultar producto por ID (GET)
+GET http://localhost:8080/api/productos/1
+
+### 5. Filtrar por categoria (GET)
+GET http://localhost:8080/api/productos/categoria/Tecnolog%C3%ADa
+
+### 6. Actualizar producto por ID (PUT)
+PUT http://localhost:8080/api/productos/1
+Content-Type: application/json
+
+{
+  "nombre": "Laptop Gamer 32GB RAM",
+  "precio": 1400.00,
+  "stock": 8,
+  "categoria": "Tecnología"
+}
+
+### 7. Eliminar producto por ID (DELETE)
+DELETE http://localhost:8080/api/productos/2
+
+### 8. Reto 1: Filtrar productos con precio menor a un valor (GET)
+GET http://localhost:8080/api/productos/precio-menor?precio=200
+
+### 9. Reto 2: Reducir stock de un producto (PATCH)
+PATCH http://localhost:8080/api/productos/1/reducir-stock?cantidad=3
+
+### 10. Reto 2: Reducir stock con cantidad mayor al stock disponible -> 400 Bad Request
+PATCH http://localhost:8080/api/productos/1/reducir-stock?cantidad=9999
